@@ -1,0 +1,298 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #f8f7f4;
+	font-family: 'Mona Sans';
+}
+
+@font-face {
+	font-family: 'Mona Sans';
+	src: url(./Mona-Sans-Light.ttf);
+}
+
+@font-face {
+	font-family: 'Mona Sans Medium';
+	src: url(./Mona-Sans-Medium.ttf);
+}
+
+@font-face {
+	font-family: 'Source Serif 4';
+	src: url(./SourceSerif4-Light.ttf);
+}
+
+@font-face {
+	font-family: 'Source Serif 4 Medium';
+	src: url(./SourceSerif4-Medium.ttf);
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+#page1 {
+	width: 100%;
+	height: 100%;
+}
+
+nav {
+	height: 17vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 2vw;
+}
+
+#nav-left {
+	width: 46vw;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 0.85vw;
+}
+
+#nav-left img {
+	width: 7vmax;
+	object-fit: cover;
+}
+
+#nav-left > div {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+}
+
+#nav-left > div i {
+	font-size: 1.2vw;
+}
+
+#nav-left h3 {
+}
+
+#nav-right {
+	width: 35vw;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3vw;
+}
+
+#search-input {
+	width: 50%;
+	background-color: #ffffff;
+	border-radius: 25px;
+	padding: 0.8vw 1.5vw;
+	color: #6e6d7a;
+	display: flex;
+	align-items: center;
+	font-size: 0.9vw;
+}
+
+#search-input i {
+	font-size: 1.3vw;
+}
+
+#search-input input {
+	width: 90%;
+	padding: 0.5vw;
+	font-size: 1vw;
+	background-color: #ffffff;
+	border: none;
+}
+
+#search-input input:focus {
+	outline: none;
+	border: none;
+	color: black;
+}
+
+#nav-right h2 {
+	font-size: 1.1vw;
+}
+
+#nav-right > h2:last-of-type {
+	background-color: black;
+	color: white;
+	padding: 1vw 1.5vw;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+#nav-right > h2:last-of-type:hover {
+	background-color: #565564;
+}
+
+#center {
+	height: 83vh;
+	padding-top: 4vw;
+	padding-bottom: 1vw;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	font-family: 'Source Serif 4';
+}
+
+#center > h4:last-of-type {
+	background-color: #0d0c22;
+	color: white;
+	padding: 1.2vw 1.4vw;
+	border-radius: 2vw;
+	cursor: pointer;
+	font-size: 1.1vw;
+}
+
+#center > h4:last-of-type:hover {
+	background-color: #565564;
+}
+@keyframes changeColor {
+	0% {
+		background-color: #ffbbc1;
+	}
+	10% {
+		background-color: #f7e6db;
+	}
+	20% {
+		background-color: #9ac1e4;
+	}
+	30% {
+		background-color: #ccb884;
+	}
+	40% {
+		background-color: #e2d681;
+	}
+	50% {
+		background-color: #ce989f;
+	}
+	60% {
+		background-color: #82b7a0;
+	}
+	70% {
+		background-color: #e9d4d4;
+	}
+	80% {
+		background-color: #d4e9e1;
+	}
+	90% {
+		background-color: #a9777e;
+	}
+	100% {
+		background-color: #b0cf77;
+	}
+}
+
+/* Apply animation to the first heading */
+#center > h4:first-child {
+	animation: changeColor 50s linear infinite;
+	padding: 0.7vw 1.4vw;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+#center h1 {
+	font-size: 5vw;
+	width: 62%;
+	line-height: 5vw;
+	text-align: center;
+}
+
+#page2 {
+	height: 70vh;
+	width: 100vw;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	white-space: nowrap;
+	padding: 1vw 0;
+}
+
+#hero-container {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	gap: 2vw;
+}
+
+#hero-slider {
+	width: 280%;
+	height: 100%;
+	padding: 2vw 0 2vw 2vw;
+	display: inline-flex;
+	gap: 2.5vw;
+	overflow-x: scroll;
+	white-space: nowrap;
+	position: relative;
+	animation: scroll 50s linear infinite;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+#hero-slider::-webkit-scrollbar {
+	display: none;
+}
+
+#hero-card {
+	height: 100%;
+	width: 50%;
+	position: relative;
+	border-radius: 30px;
+}
+
+#hero-media {
+	border-radius: 30px;
+	width: 100%;
+	height: 100%;
+}
+
+#hero-media img,
+video {
+	border-radius: 30px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#hero-info {
+	height: 28%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	bottom: 0;
+	position: absolute;
+	color: white;
+	font-family: 'Mona Sans';
+	padding: 1vw 1.5vw;
+}
+
+#hero-info h4 {
+	font-size: 1vw;
+}
+
+#hero-tags {
+	display: flex;
+	gap: 1vw;
+}
+
+#hero-tags h6 {
+	border: 1px solid #b6b4af86;
+	padding: 0.4vw 0.8vw;
+	border-radius: 25px;
+}
