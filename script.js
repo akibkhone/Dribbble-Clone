@@ -87,7 +87,7 @@ function generateHeroCard() {
 			name: 'Helen Tran',
 			role: 'Lead Product Designer',
 			tags: ['Leadership', 'Product', 'UX'],
-			video: 'Top Slider/Helen Tran.mp4',
+			video: 'Top Slider/HelenTran.mp4',
 		},
 		{
 			name: 'Mercedes Bazan',
@@ -101,29 +101,38 @@ function generateHeroCard() {
 			tags: ['UI', 'Web', 'Mobile'],
 			video: 'Top Slider/Jesse.mp4',
 		},
-		{ name: 'Dan Mall', role: 'Design Educator', tags: ['Product', 'UX'], video: 'Top Slider/Dan Mall.mp4' },
+		{ name: 'Dan Mall', role: 'Design Educator', tags: ['Product', 'UX'], video: 'Top Slider/DanMall.mp4' },
 	];
 
-	const heroContainer = document.querySelector('.hero-slider');
+	const heroContainers = document.querySelectorAll('.hero-slider');
 
-	heroes.forEach((hero) => {
-		const heroCard = document.createElement('div');
-		heroCard.classList.add('hero-card');
+	heroContainers.forEach((heroContainer) => {
+		heroes.forEach((hero) => {
+			const heroCard = document.createElement('div');
+			heroCard.classList.add('hero-card');
 
-		heroCard.innerHTML = `
-                    <div class="hero-media">
-                        <img src="${hero.image}" alt="${hero.name}">
+			let mediaElement;
+			if (hero.video) {
+				mediaElement = `<video src="${hero.video}" autoplay loop muted></video>`;
+			} else {
+				mediaElement = `<img src="${hero.image}" alt="${hero.name}">`;
+			}
+
+			heroCard.innerHTML = `
+				<div class="hero-media">
+					${mediaElement}
+				</div>
+                <div class="hero-info">
+                    <h4>${hero.name}</h4>
+                    <h4>${hero.role}</h4>
+                    <div class="hero-tags">
+                        ${hero.tags.map((tag) => `<h6>${tag}</h6>`).join('')}
                     </div>
-                    <div class="hero-info">
-                        <h4>${hero.name}</h4>
-                        <h4>${hero.role}</h4>
-                        <div class="hero-tags">
-                            ${hero.tags.map((tag) => `<h6>${tag}</h6>`).join('')}
-                        </div>
-                    </div>
-                `;
+                </div>
+            `;
 
-		heroContainer.appendChild(heroCard);
+			heroContainer.appendChild(heroCard);
+		});
 	});
 }
 
