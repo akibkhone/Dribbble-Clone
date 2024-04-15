@@ -12,6 +12,10 @@ body {
 	font-family: 'Mona Sans';
 }
 
+::selection {
+	background-color: #f6e2aee7;
+}
+
 @font-face {
 	font-family: 'Mona Sans';
 	src: url(./Mona-Sans-Light.ttf);
@@ -388,6 +392,12 @@ video {
 	height: 90%;
 	position: relative;
 	border-radius: 15px;
+
+	cursor: pointer;
+}
+
+.design-card:hover {
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.456);
 }
 
 .design-media {
@@ -418,10 +428,10 @@ video {
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.708), rgba(255, 255, 255, 0));
 	padding: 0 1.5vmax;
 	cursor: pointer;
-	transition: all ease 0.3s;
 }
 
-.design-icons {
+.design-overlay:hover {
+	transition: all ease 0.5s;
 }
 
 .design-icons i {
@@ -640,6 +650,8 @@ video {
 	flex-direction: column;
 	justify-content: space-around;
 	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
 }
 
 .marquee-item img {
@@ -649,7 +661,7 @@ video {
 	object-fit: cover;
 	position: relative;
 	z-index: 2;
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 5px 5px 10px rgba(255, 215, 136, 0.823);
 }
 
 .marquee-item img::after {
